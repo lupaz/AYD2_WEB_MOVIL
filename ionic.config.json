@@ -1,0 +1,7 @@
+{
+  "name": "Catedraticos",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}
