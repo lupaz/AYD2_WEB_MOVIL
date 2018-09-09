@@ -1,0 +1,28 @@
+<!--
+  Generated template for the CatedraticosPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Catedraticos</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+    <ion-list>
+        <ion-item *ngFor="let docente of docentes">
+          <ion-avatar item-start>
+            <img src="../assets/imgs/default_avatar.png">
+          </ion-avatar>
+          <h2>{{docente.nombre}}</h2>
+          <h3>{{ docente.correo }}</h3>
+          <p>Edad: {{ docente.edad }}</p>
+        </ion-item>
+      </ion-list>
+</ion-content>

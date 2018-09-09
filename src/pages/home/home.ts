@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { RegistroPage } from '../registro/registro';
+import { CatedraticosPage } from '../catedraticos/catedraticos';
 
 @Component({
   selector: 'page-home',
@@ -17,6 +18,7 @@ export class HomePage {
   ingresar(){
     console.log("Usuario: "+this.usuario);
     console.log("Contaseña: "+this.pass);
+    this.navCtrl.push(CatedraticosPage);
   }
 
   registrar(){
