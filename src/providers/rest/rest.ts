@@ -22,7 +22,7 @@ export class RestProvider {
     return response;
   }*/
 
-  apiUrl = 'http://api.catedraticos/index.php';
+  apiUrl = 'http://35.224.130.227/AYD2_BACKEND/';
   getDocentes() {
     return new Promise(resolve => {
       this.http.get(this.apiUrl+'/catedratico_controller').subscribe(data => {
