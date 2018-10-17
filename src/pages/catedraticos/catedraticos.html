@@ -14,15 +14,14 @@
 
 
 <ion-content padding>
-
     <ion-list>
-        <ion-item *ngFor="let docente of docentes">
+        <ion-item *ngFor="let docente of docentes" (click)="getCatedratico(docente)">
           <ion-avatar item-start>
             <img src="../assets/imgs/default_avatar.png">
           </ion-avatar>
-          <h2>{{docente.nombre}}</h2>
-          <h3>{{ docente.correo }}</h3>
-          <p>Edad: {{ docente.edad }}</p>
+          <h2>{{docente.nombre+" "+docente.apellido}}</h2>
+          <h3>{{ docente.id_personal+"@ingenieria.usac.edu.gt" }}</h3>
+          <p>CUI: {{ docente.cui }}</p>
         </ion-item>
       </ion-list>
 </ion-content>

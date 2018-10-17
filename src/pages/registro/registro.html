@@ -15,37 +15,78 @@
 
 <ion-content padding center text-center>
   <ion-title>
-    Ingrese su datos
+    Ingresa tus datos
   </ion-title>
 
-  <ion-list>
+  <form [formGroup]="myForm" (ngSubmit)="creaRegistro()" novalidate>
+      <ion-list> 
+      <ion-item>
+          <ion-label floating>Nombre</ion-label>
+          <ion-input type="text"  formControlName="nombre"></ion-input>
+      </ion-item>
+        <ion-item *ngIf="myForm.get('nombre').errors && myForm.get('nombre').dirty">
+          <p color="danger" ion-text *ngIf="myForm.get('nombre').hasError('required')">Campo Requerido</p>
+        </ion-item>
+    
+        <ion-item>
+            <ion-label floating>Apellido</ion-label>
+            <ion-input type="text"  formControlName="apellido"></ion-input>
+          </ion-item>
 
-    <ion-item>
-      <ion-label floating>Nombres</ion-label>
-      <ion-input type="text" [(ngModel)]="usuario"></ion-input>
-    </ion-item>
+          <ion-item *ngIf="myForm.get('apellido').errors && myForm.get('apellido').dirty">
+              <p color="danger" ion-text *ngIf="myForm.get('apellido').hasError('required')">Campo Requerido</p>
+            </ion-item>
+            
+            <ion-item>
+              <ion-label floating>Carnet</ion-label>
+              <ion-input type="number"  formControlName="carnet"></ion-input>
+            </ion-item>
+            <ion-item *ngIf="myForm.get('carnet').errors && myForm.get('carnet').dirty">
+              <p color="danger" ion-text *ngIf="myForm.get('carnet').hasError('required')">Campo Requerido</p>
+            </ion-item>
 
-    <ion-item>
-      <ion-label floating>Apellidos</ion-label>
-      <ion-input type="text" [(ngModel)]="usuario"></ion-input>
-    </ion-item>
 
-    <ion-item>
-      <ion-label floating>Usuario</ion-label>
-      <ion-input type="text" [(ngModel)]="usuario"></ion-input>
-    </ion-item>
+            <ion-item>
+              <ion-label floating>CUI</ion-label>
+              <ion-input type="number"  formControlName="cui"></ion-input>
+            </ion-item>
 
-    <ion-item>
-      <ion-label floating>Contraseña</ion-label>
-      <ion-input type="text" [(ngModel)]="usuario"></ion-input>
-    </ion-item>
-  
-    <ion-item>
-      <ion-label floating>R-Contraseña</ion-label>
-      <ion-input type="password" [(ngModel)]="pass"></ion-input>
-    </ion-item>
-  </ion-list>
+            <ion-item *ngIf="myForm.get('cui').errors && myForm.get('cui').dirty">
+              <p color="danger" ion-text *ngIf="myForm.get('cui').hasError('required')">Campo Requerido</p>
+            </ion-item>
 
-  <button full ion-button (click)="creaRegistro()">Ingresar</button>
+          <ion-item>
+            <ion-label floating>Contraseña</ion-label>
+            <ion-input type="password"  formControlName="contrasena"></ion-input>
+          </ion-item>
+
+          <ion-item *ngIf="myForm.get('contrasena').errors && myForm.get('contrasena').dirty">
+              <p color="danger" ion-text *ngIf="myForm.get('contrasena').hasError('required')">Campo Requerido</p>
+            </ion-item>
+          
+            <ion-item>
+              <ion-label floating>Carrera</ion-label>
+              <ion-select okText="Aceptar" cancelText="Cancelar" formControlName="carrera">
+                <ion-option value="1">Ing Civil</ion-option>
+                <ion-option value="2">Ing Quimica</ion-option>
+                <ion-option value="3">Ing Mecanica</ion-option>
+                <ion-option value="4">Ing Electrica</ion-option>
+                <ion-option value="5">Ing Indutrial</ion-option>
+                <ion-option value="6">Ing Electronica</ion-option>
+                <ion-option value="9">Ing Ciencias Sistemas</ion-option>
+              </ion-select>
+            </ion-item>
+            
+            <ion-item *ngIf="myForm.get('carrera').errors && myForm.get('carrera').dirty">
+              <p color="danger" ion-text *ngIf="myForm.get('carrera').hasError('required')">Campo Requerido</p>
+            </ion-item>
+
+      </ion-list>
+
+      <div padding>
+        <button ion-button color="secondary" block type="submit" [disabled]="myForm.invalid">Registrarse</button>
+      </div>
+    
+    </form>
 
 </ion-content>

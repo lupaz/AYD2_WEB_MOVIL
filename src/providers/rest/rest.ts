@@ -10,7 +10,6 @@ import 'rxjs/add/operator/map';
 */
 @Injectable()
 export class RestProvider {
-
   constructor(public http: HttpClient) {
     console.log('Hello RestProvider Provider');
   }
@@ -22,10 +21,11 @@ export class RestProvider {
     return response;
   }*/
 
-  apiUrl = 'http://35.224.130.227/AYD2_BACKEND/';
+  //apiUrl = 'http://35.224.130.227/AYD2_BACKEND/api_movil';
+  apiUrl = 'http://api.catedraticos/api_movil';
   getDocentes() {
     return new Promise(resolve => {
-      this.http.get(this.apiUrl+'/catedratico_controller').subscribe(data => {
+      this.http.get(this.apiUrl+'/get_catedraticos').subscribe(data => {
         resolve(data);
       }, err => {
         console.log(err);
@@ -33,16 +33,45 @@ export class RestProvider {
     });
   }
 
-  addUser(data) {
+  getCursos(data){
     return new Promise((resolve, reject) => {
-      this.http.post(this.apiUrl+'/users', JSON.stringify(data))
+      this.http.post(this.apiUrl+'/get_cursos', this.getFormData(data))
         .subscribe(res => {
           resolve(res);
         }, (err) => {
-          reject(err);
+          console.log(err);
         });
     });
   }
 
+  addUsuario(data) {
+    //console.log("jajajaja"+JSON.stringify(data));
+    return new Promise((resolve, reject) => {
+      this.http.post(this.apiUrl+'/add_estudiante', this.getFormData(data))
+        .subscribe(res => {
+          resolve(res);
+        }, (err) => {
+          console.log(err);
+        });
+    });
+  }
+
+  login(data) {
+    //console.log("jajajaja"+JSON.stringify(data));
+    return new Promise((resolve, reject) => {
+      this.http.post(this.apiUrl+'/login_user', this.getFormData(data))
+        .subscribe(res => {
+          resolve(res);
+        }, (err) => {
+          console.log(err);
+        });
+    });
+  }
+
+  getFormData(object) {
+    const formData = new FormData();
+    Object.keys(object).forEach(key => formData.append(key, object[key]));
+    return formData;
+  }
 
 }

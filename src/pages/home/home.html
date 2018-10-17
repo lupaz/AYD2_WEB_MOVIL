@@ -1,26 +1,38 @@
 
 
 <ion-content padding center text-center>
-  <ion-title>
+  <ion-img width="150" height="150" src="../assets/imgs/inge.png"></ion-img>
+  
+  <ion-title>  
     Evaluación de Catedraticos
   </ion-title>
-
+  
+  <form [formGroup]="myForm" (ngSubmit)="ingresar()" novalidate>
   <ion-list>
-
     <ion-item>
-      <ion-label floating>Usuario</ion-label>
-      <ion-input type="text" [(ngModel)]="usuario"></ion-input>
+      <ion-label floating>Carnet</ion-label>
+      <ion-input type="number"  formControlName="carnet"></ion-input>
+    </ion-item>
+    <ion-item *ngIf="myForm.get('carnet').errors && myForm.get('carnet').dirty">
+      <p color="danger" ion-text *ngIf="myForm.get('carnet').hasError('required')">Campo Requerido</p>
     </ion-item>
   
     <ion-item>
       <ion-label floating>Contraseña</ion-label>
-      <ion-input type="password" [(ngModel)]="pass"></ion-input>
+      <ion-input type="password"  formControlName="contrasena"></ion-input>
     </ion-item>
-  
+
+    <ion-item *ngIf="myForm.get('contrasena').errors && myForm.get('contrasena').dirty">
+        <p color="danger" ion-text *ngIf="myForm.get('contrasena').hasError('required')">Campo Requerido</p>
+      </ion-item>
   </ion-list>
 
-  <button full ion-button (click)="ingresar()">Ingresar</button>
-  <button full ion-button color="light" (click)="registrar()">Registrarse</button>
+  <div padding>
+    <button ion-button block type="submit" [disabled]="myForm.invalid">Ingresar</button>
+  </div>
+</form>
+<button ion-button  (click)="registrar()" clear>¿No tienes una cuenta?</button>
+  
 
 </ion-content>
 
