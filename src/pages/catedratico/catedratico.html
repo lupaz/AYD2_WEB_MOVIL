@@ -7,27 +7,237 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>catedratico</ion-title>
+    <ion-title>Catedratico</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
-  
     <ion-card>
         <img src="../assets/imgs/profile_cat.png"/>
         <ion-card-content>
           <ion-card-title text-center>
             Ing. {{ docente.nombre+" "+docente.apellido}}
           </ion-card-title>
+          <ion-row no-padding *ngIf="promedio == 0">
+              <ion-col text-center>
+                  <ion-icon class = "custom-icon-start" name='star-outline'></ion-icon>
+              </ion-col>
+              <ion-col text-right>
+                  <ion-icon class = "custom-icon-start" name='star-outline'></ion-icon>
+              </ion-col>
+              <ion-col text-right>
+                  <ion-icon class = "custom-icon-start" name='star-outline'></ion-icon>
+              </ion-col>
+              <ion-col text-right>
+                  <ion-icon class = "custom-icon-start" name='star-outline'></ion-icon>
+              </ion-col>
+              <ion-col text-right>
+                  <ion-icon class = "custom-icon-start" name='star-outline'></ion-icon>
+              </ion-col>
+          </ion-row>
+
+          <ion-row no-padding *ngIf="promedio > 0 && promedio <20">
+              <ion-col text-center>
+                  <ion-icon class = "custom-icon-start" name='star-half'></ion-icon>
+              </ion-col>
+              <ion-col text-right>
+                  <ion-icon class = "custom-icon-start" name='star-outline'></ion-icon>
+              </ion-col>
+              <ion-col text-right>
+                  <ion-icon class = "custom-icon-start" name='star-outline'></ion-icon>
+              </ion-col>
+              <ion-col text-right>
+                  <ion-icon class = "custom-icon-start" name='star-outline'></ion-icon>
+              </ion-col>
+              <ion-col text-right>
+                  <ion-icon class = "custom-icon-start" name='star-outline'></ion-icon>
+              </ion-col>
+          </ion-row>
+
+          <ion-row no-padding *ngIf="promedio >19 && promedio <30">
+              <ion-col text-center>
+                  <ion-icon class = "custom-icon-start" name='star'></ion-icon>
+              </ion-col>
+              <ion-col text-right>
+                  <ion-icon class = "custom-icon-start" name='star-outline'></ion-icon>
+              </ion-col>
+              <ion-col text-right>
+                  <ion-icon class = "custom-icon-start" name='star-outline'></ion-icon>
+              </ion-col>
+              <ion-col text-right>
+                  <ion-icon class = "custom-icon-start" name='star-outline'></ion-icon>
+              </ion-col>
+              <ion-col text-right>
+                  <ion-icon class = "custom-icon-start" name='star-outline'></ion-icon>
+              </ion-col>
+          </ion-row>
+
+          <ion-row no-padding *ngIf="promedio >29 && promedio <40">
+              <ion-col text-center>
+                  <ion-icon class = "custom-icon-start" name='star'></ion-icon>
+              </ion-col>
+              <ion-col text-right>
+                  <ion-icon class = "custom-icon-start" name='star-half'></ion-icon>
+              </ion-col>
+              <ion-col text-right>
+                  <ion-icon class = "custom-icon-start" name='star-outline'></ion-icon>
+              </ion-col>
+              <ion-col text-right>
+                  <ion-icon class = "custom-icon-start" name='star-outline'></ion-icon>
+              </ion-col>
+              <ion-col text-right>
+                  <ion-icon class = "custom-icon-start" name='star-outline'></ion-icon>
+              </ion-col>
+          </ion-row>
+
+          <ion-row no-padding *ngIf="promedio >39 &&promedio <50">
+              <ion-col text-center>
+                  <ion-icon class = "custom-icon-start" name='star'></ion-icon>
+              </ion-col>
+              <ion-col text-right>
+                  <ion-icon class = "custom-icon-start" name='star'></ion-icon>
+              </ion-col>
+              <ion-col text-right>
+                  <ion-icon class = "custom-icon-start" name='star-outline'></ion-icon>
+              </ion-col>
+              <ion-col text-right>
+                  <ion-icon class = "custom-icon-start" name='star-outline'></ion-icon>
+              </ion-col>
+              <ion-col text-right>
+                  <ion-icon class = "custom-icon-start" name='star-outline'></ion-icon>
+              </ion-col>
+          </ion-row>
+
+          <ion-row no-padding *ngIf="promedio > 49 && promedio < 60">
+              <ion-col text-center>
+                  <ion-icon class = "custom-icon-start" name='star'></ion-icon>
+              </ion-col>
+              <ion-col text-right>
+                  <ion-icon class = "custom-icon-start" name='star'></ion-icon>
+              </ion-col>
+              <ion-col text-right>
+                  <ion-icon class = "custom-icon-start" name='star-half'></ion-icon>
+              </ion-col>
+              <ion-col text-right>
+                  <ion-icon class = "custom-icon-start" name='star-outline'></ion-icon>
+              </ion-col>
+              <ion-col text-right>
+                  <ion-icon class = "custom-icon-start" name='star-outline'></ion-icon>
+              </ion-col>
+          </ion-row>
+
+          <ion-row no-padding *ngIf="promedio >59 && promedio <70">
+              <ion-col text-center>
+                  <ion-icon class = "custom-icon-start" name='star'></ion-icon>
+              </ion-col>
+              <ion-col text-right>
+                  <ion-icon class = "custom-icon-start" name='star'></ion-icon>
+              </ion-col>
+              <ion-col text-right>
+                  <ion-icon class = "custom-icon-start" name='star'></ion-icon>
+              </ion-col>
+              <ion-col text-right>
+                  <ion-icon class = "custom-icon-start" name='star-outline'></ion-icon>
+              </ion-col>
+              <ion-col text-right>
+                  <ion-icon class = "custom-icon-start" name='star-outline'></ion-icon>
+              </ion-col>
+          </ion-row>
+
+          <ion-row no-padding *ngIf=" promedio > 69 && promedio <80">
+              <ion-col text-center>
+                  <ion-icon class = "custom-icon-start" name='star'></ion-icon>
+              </ion-col>
+              <ion-col text-right>
+                  <ion-icon class = "custom-icon-start" name='star'></ion-icon>
+              </ion-col>
+              <ion-col text-right>
+                  <ion-icon class = "custom-icon-start" name='star'></ion-icon>
+              </ion-col>
+              <ion-col text-right>
+                  <ion-icon class = "custom-icon-start" name='star-half'></ion-icon>
+              </ion-col>
+              <ion-col text-right>
+                  <ion-icon class = "custom-icon-start" name='star-outline'></ion-icon>
+              </ion-col>
+          </ion-row>
+
+          <ion-row no-padding *ngIf="promedio > 79 && promedio <90">
+              <ion-col text-center>
+                  <ion-icon class = "custom-icon-start" name='star'></ion-icon>
+              </ion-col>
+              <ion-col text-right>
+                  <ion-icon class = "custom-icon-start" name='star'></ion-icon>
+              </ion-col>
+              <ion-col text-right>
+                  <ion-icon class = "custom-icon-start" name='star'></ion-icon>
+              </ion-col>
+              <ion-col text-right>
+                  <ion-icon class = "custom-icon-start" name='star'></ion-icon>
+              </ion-col>
+              <ion-col text-right>
+                  <ion-icon class = "custom-icon-start" name='star-outline'></ion-icon>
+              </ion-col>
+          </ion-row>
+
+          <ion-row no-padding *ngIf="promedio >89 && promedio < 100">
+              <ion-col text-center>
+                  <ion-icon class = "custom-icon-start" name='star'></ion-icon>
+              </ion-col>
+              <ion-col text-right>
+                  <ion-icon class = "custom-icon-start" name='star'></ion-icon>
+              </ion-col>
+              <ion-col text-right>
+                  <ion-icon class = "custom-icon-start" name='star'></ion-icon>
+              </ion-col>
+              <ion-col text-right>
+                  <ion-icon class = "custom-icon-start" name='star'></ion-icon>
+              </ion-col>
+              <ion-col text-right>
+                  <ion-icon class = "custom-icon-start" name='star-half'></ion-icon>
+              </ion-col>
+          </ion-row>
+
+          <ion-row no-padding *ngIf="promedio == 100">
+              <ion-col text-center>
+                  <ion-icon class = "custom-icon-start" name='star'></ion-icon>
+              </ion-col>
+              <ion-col text-right>
+                  <ion-icon class = "custom-icon-start" name='star'></ion-icon>
+              </ion-col>
+              <ion-col text-right>
+                  <ion-icon class = "custom-icon-start" name='star'></ion-icon>
+              </ion-col>
+              <ion-col text-right>
+                  <ion-icon class = "custom-icon-start" name='star'></ion-icon>
+              </ion-col>
+              <ion-col text-right>
+                  <ion-icon class = "custom-icon-start" name='star'></ion-icon>
+              </ion-col>
+          </ion-row>
           <p>
             {{docente.id_personal+"@ingenieria.usac.edu.gt"}}
           </p>
           <p>
             CUI: {{docente.cui}}
           </p>
-   </ion-card-content>
+    </ion-card-content>
+    <ion-row no-padding>
+        <ion-col text-center>
+          <button ion-button clear small color="default"  icon-start (click)="calificar()">
+            <ion-icon name='create'></ion-icon>
+            Calificar
+          </button>
+        </ion-col>
+        <ion-col text-right>
+          <button ion-button clear small color="danger" icon-start (click)="getResultados()">
+            <ion-icon name='stats'></ion-icon>
+            Resultados
+          </button>
+        </ion-col>
+    </ion-row>
   </ion-card>
   <ion-list>
     <ion-list-header>

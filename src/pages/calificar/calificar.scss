@@ -1,0 +1,21 @@
+page-calificar {
+    ion-list + ion-list {
+        margin-top: 0;
+      }
+
+    .icon-like{
+        color: #169c43
+    }  
+
+    .icon-dlike{
+        color: #ff1515
+    }
+
+    .label-color{
+       color :#216de9dc;
+    }
+
+    .centrado{
+        text-align: center;
+      }
+}

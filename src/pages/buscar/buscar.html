@@ -15,9 +15,24 @@
 
 <ion-content padding>
   <ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>
-  <ion-list>
-    <ion-item *ngFor="let item of items">
-      {{ item }}
-    </ion-item>
+  <ion-list *ngIf="!curso" >
+      <ion-item   *ngFor="let item of items" (click)="getCatedratico(item)">
+          <ion-avatar item-start>
+            <img src="../assets/imgs/profile_cat.png">
+          </ion-avatar>
+          <h2>{{item.nombre+" "+item.apellido}}</h2>
+          <h3>{{ item.id_personal+"@ingenieria.usac.edu.gt" }}</h3>
+          <p>CUI: {{ item.cui }}</p>
+      </ion-item>
   </ion-list>
+
+<ion-list *ngIf="curso">
+    <ion-item   *ngFor="let item of items">
+        <ion-icon name="book"  item-start class="custom-icon"></ion-icon>
+        <h2>{{item.nombre}}</h2>
+        <h3>Codigo: {{item.id_curso}}</h3>
+        <p>Creditos: {{item.creditos}} </p>
+    </ion-item>
+</ion-list>
+      
 </ion-content>

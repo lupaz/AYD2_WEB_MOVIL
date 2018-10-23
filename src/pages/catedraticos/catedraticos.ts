@@ -31,15 +31,11 @@ export class CatedraticosPage {
     loader.present();
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad CatedraticosPage');
-  }
-
   getDocentes() {
     this.restProvider.getDocentes()
     .then(data => {
       this.docentes = data;
-      console.log(this.docentes);
+      //console.log(this.docentes);
     });
   }
 

@@ -15,12 +15,15 @@ import { TabsPage } from '../pages/tabs/tabs';
 import { PerfilPage } from'../pages/perfil/perfil';
 import { BuscarPage } from '../pages/buscar/buscar';
 import { CatedraticoPage } from '../pages/catedratico/catedratico';
+import { CalificarPage } from '../pages/calificar/calificar';
+import { ResultadosPage } from '../pages/resultados/resultados';
+import { RestExtProvider } from '../providers/rest-ext/rest-ext';
 
 
 @NgModule({
   declarations: [
     MyApp,
-    HomePage,RegistroPage,CatedraticosPage,TabsPage,PerfilPage,BuscarPage,CatedraticoPage
+    HomePage,RegistroPage,CatedraticosPage,TabsPage,PerfilPage,BuscarPage,CatedraticoPage,CalificarPage,ResultadosPage
   ],
   imports: [
     BrowserModule,
@@ -31,13 +34,14 @@ import { CatedraticoPage } from '../pages/catedratico/catedratico';
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    HomePage,RegistroPage,CatedraticosPage,TabsPage,PerfilPage,BuscarPage,CatedraticoPage
+    HomePage,RegistroPage,CatedraticosPage,TabsPage,PerfilPage,BuscarPage,CatedraticoPage,CalificarPage,ResultadosPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    RestProvider
+    RestProvider,
+    RestExtProvider
   ]
 })
 export class AppModule {}

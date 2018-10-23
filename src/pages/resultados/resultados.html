@@ -1,0 +1,117 @@
+<!--
+  Generated template for the ResultadosPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Resultados</ion-title>
+  </ion-navbar>
+
+</ion-header>
+asdad
+
+<ion-content padding>
+    <ion-list>
+        <ion-item >
+          <ion-thumbnail item-start>
+            <img src="../assets/imgs/profile_cat.png">
+            <h6 class="tamano-label"> Ing. {{docente.nombre+" "+docente.apellido}} </h6>
+          </ion-thumbnail>
+          <ion-row no-padding >
+              <ion-col col-8>
+                <button ion-button class="tamano-items" clear>
+                  <ion-icon name="checkmark-circle-outline" item-start ></ion-icon>
+                   Dominio
+                </button>
+              </ion-col>
+              <ion-col text-center>
+                  <button *ngIf="dominio > 59" ion-button class="tamano-items"  color="secondary" outline>
+                  {{dominio}}/100
+                  </button>
+                  <button *ngIf="dominio < 60" ion-button class="tamano-items"  color="danger" outline>
+                      {{dominio}}/100
+                  </button>
+              </ion-col>
+          </ion-row>
+          <ion-row no-padding>
+              <ion-col col-8>
+                <button ion-button class="tamano-items" clear>
+                  <ion-icon name="checkmark-circle-outline" item-start ></ion-icon>
+                   Responsabilidad
+                </button>
+              </ion-col>
+              <ion-col text-center>
+                  <button  *ngIf="responsable > 59" ion-button class="tamano-items" color="secondary" outline>
+                  {{responsable}}/100
+                  </button>
+                  <button *ngIf="responsable < 60" ion-button class="tamano-items" color="danger" outline>
+                      {{responsable}}/100
+                  </button>
+              </ion-col>
+          </ion-row>
+          <ion-row no-padding>
+              <ion-col col-8>
+                <button ion-button class="tamano-items" clear>
+                  <ion-icon name="checkmark-circle-outline" item-start ></ion-icon>
+                   Puntualidad
+                </button>
+              </ion-col>
+              <ion-col text-center>
+                  <button *ngIf="puntual > 59" ion-button class="tamano-items" color="secondary" outline>
+                  {{puntual}}/100
+                  </button>
+                  <button *ngIf="puntual < 60" ion-button class="tamano-items" color="danger" outline>
+                      {{puntual}}/100
+                  </button>
+              </ion-col>
+          </ion-row>
+          <ion-row no-padding>
+              <ion-col col-8>
+                <button ion-button class="tamano-items" clear>
+                  <ion-icon name="checkmark-circle-outline" item-start ></ion-icon>
+                   Didáctica
+                </button>
+              </ion-col>
+              <ion-col text-center>
+                  <button *ngIf="didactica > 59" ion-button class="tamano-items" color="secondary" outline>
+                  {{didactica}}/100
+                  </button>
+                  <button *ngIf="didactica < 60" ion-button class="tamano-items" color="danger" outline>
+                      {{didactica}}/100
+                  </button>
+              </ion-col>
+          </ion-row>
+          <ion-row no-padding>
+              <ion-col col-8>
+                <button ion-button class="tamano-items" clear>
+                  <ion-icon name="checkmark-circle-outline" item-start ></ion-icon>
+                   Respeto
+                </button>
+              </ion-col>
+              <ion-col text-center>
+                  <button *ngIf="respeto > 59" ion-button class="tamano-items" color="secondary" outline>
+                  {{respeto}}/100
+                  </button>
+                  <button *ngIf="respeto < 60" ion-button class="tamano-items" color="danger" outline>
+                      {{respeto}}/100
+                  </button>
+              </ion-col>
+          </ion-row>
+        </ion-item>
+        <ion-list-header>
+            Comentarios
+        </ion-list-header>
+        <ion-item  *ngFor="let comen of comentarios">
+            <ion-avatar item-start>
+              <img src="../assets/imgs/profile_user.png">
+            </ion-avatar>
+            <h2>{{comen.nombre+" "+comen.apellido}}</h2>
+            <ion-card-content style="white-space: normal; text-align:justify;" no-padign no-margin>
+                <p>{{comen.comentario}}</p>
+              </ion-card-content>
+          </ion-item>
+      </ion-list>
+</ion-content>

@@ -21,8 +21,8 @@ export class RestProvider {
     return response;
   }*/
 
-  //apiUrl = 'http://35.224.130.227/AYD2_BACKEND/api_movil';
-  apiUrl = 'http://api.catedraticos/api_movil';
+  apiUrl = 'http://35.224.130.227/AYD2_BACKEND/api_Movil';
+  //apiUrl = 'http://api.catedraticos/api_movil';
   getDocentes() {
     return new Promise(resolve => {
       this.http.get(this.apiUrl+'/get_catedraticos').subscribe(data => {
@@ -44,10 +44,88 @@ export class RestProvider {
     });
   }
 
+  searchCurso(data){
+    return new Promise((resolve, reject) => {
+      this.http.post(this.apiUrl+'/search_curso', this.getFormData(data))
+        .subscribe(res => {
+          resolve(res);
+        }, (err) => {
+          console.log(err);
+        });
+    });
+  }
+
+  searchDocente(data){
+    return new Promise((resolve, reject) => {
+      this.http.post(this.apiUrl+'/search_docente', this.getFormData(data))
+        .subscribe(res => {
+          resolve(res);
+        }, (err) => {
+          console.log(err);
+        });
+    });
+  }
+
+  getComentarios(data){
+    return new Promise((resolve, reject) => {
+      this.http.post(this.apiUrl+'/get_comentarios', this.getFormData(data))
+        .subscribe(res => {
+          resolve(res);
+        }, (err) => {
+          console.log(err);
+        });
+    });
+  }
+
+  getCalificacion(data){
+    return new Promise((resolve, reject) => {
+      this.http.post(this.apiUrl+'/get_calificacion', this.getFormData(data))
+        .subscribe(res => {
+          resolve(res);
+        }, (err) => {
+          console.log(err);
+        });
+    });
+  }
+
+  calificacion(data){
+    return new Promise((resolve, reject) => {
+      this.http.post(this.apiUrl+'/calificacion_personal', this.getFormData(data))
+        .subscribe(res => {
+          resolve(res);
+        }, (err) => {
+          console.log(err);
+        });
+    });
+  }
+
   addUsuario(data) {
     //console.log("jajajaja"+JSON.stringify(data));
     return new Promise((resolve, reject) => {
       this.http.post(this.apiUrl+'/add_estudiante', this.getFormData(data))
+        .subscribe(res => {
+          resolve(res);
+        }, (err) => {
+          console.log(err);
+        });
+    });
+  }
+
+  updateCalificacion(data) {
+    //console.log("jajajaja"+JSON.stringify(data));
+    return new Promise((resolve, reject) => {
+      this.http.post(this.apiUrl+'/update_calificacion', this.getFormData(data))
+        .subscribe(res => {
+          resolve(res);
+        }, (err) => {
+          console.log(err);
+        });
+    });
+  }
+
+  setCalificacion(data) {
+    return new Promise((resolve, reject) => {
+      this.http.post(this.apiUrl+'/set_calificacion', this.getFormData(data))
         .subscribe(res => {
           resolve(res);
         }, (err) => {
@@ -71,6 +149,7 @@ export class RestProvider {
   getFormData(object) {
     const formData = new FormData();
     Object.keys(object).forEach(key => formData.append(key, object[key]));
+    //console.log(formData);
     return formData;
   }
 

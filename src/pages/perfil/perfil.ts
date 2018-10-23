@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { Storage } from '@ionic/storage';
+import { HomePage } from '../home/home';
 
 /**
  * Generated class for the PerfilPage page.
@@ -36,6 +37,11 @@ export class PerfilPage {
     this.storage.get('carnet').then((carnet)=>{
       this.datos.carnet=carnet;
     });
+    
+  }
+  cerrarSesion(){
+    this.storage.clear();    
+    this.navCtrl.setRoot(HomePage);
   }
   
 }
